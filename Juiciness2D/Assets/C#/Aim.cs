@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class Aim : MonoBehaviour
 {
-    [SerializeField] private Camera mainCamera;
-
-    public float mouseSens = 100f;
-
-    public float zRotation;
+    public GameObject acornBullet;
+    public Transform firePoint;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +22,7 @@ public class Aim : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(mouse); 
         //Sätter in musen med tio unity enheter i z axeln för att sedan kunna sätta in musen i Unity världen med ScreenToWorldPoint - Edvin
 
-        print(mousePos); //skriver ut musens position i världen för att se att det funkar - Edvin
+        //print(mousePos); //skriver ut musens position i världen för att se att det funkar - Edvin
 
         float vinkel = Mathf.Atan2((mousePos.y - transform.position.y), (mousePos.x - transform.position.x))* Mathf.Rad2Deg -90;
         /*  
@@ -38,6 +35,19 @@ public class Aim : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, 0, vinkel); //sätter in vinkeln i kanonens z rotation
 
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            shoot();
+        }
+
     }
 
+    void shoot()
+    {
+        // Shooting logic
+
+        goForward Bullet = Instantiate(acornBullet, firePoint.position, firePoint.rotation).GetComponent<goForward>();
+        Bullet.direction = transform.up;
+
+    }
 }
