@@ -7,6 +7,7 @@ public class goForward : MonoBehaviour
     public Rigidbody2D rb2d;
     public float speed = 20;
     public Vector3 direction;
+    public int bulletDamage = 25;
 
     // Start is called before the first frame update
     void Start()
@@ -16,9 +17,13 @@ public class goForward : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-     
-       print(hitInfo.name);
-       Destroy(gameObject);
+        Enemy enemy = hitInfo.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(bulletDamage);
+        }
+
+        Destroy(gameObject);
      
     }
 
