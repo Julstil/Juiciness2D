@@ -14,7 +14,7 @@ public class Aim : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         Vector3 mouse = Input.mousePosition; //Skapar en lokal variabel som håller musens position i datorn i en Vector3 - Edvin
 
@@ -42,10 +42,10 @@ public class Aim : MonoBehaviour
 
     }
 
-    void shoot()
+    public void shoot()
     {
-        // Shooting logic
 
+        // Shooting logic
         goForward Bullet = Instantiate(acornBullet, firePoint.position, firePoint.rotation).GetComponent<goForward>();
         Bullet.direction = transform.up;
 

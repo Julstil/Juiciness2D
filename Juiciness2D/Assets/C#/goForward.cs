@@ -15,17 +15,23 @@ public class goForward : MonoBehaviour
         rb2d.velocity = direction * speed;
     }
 
-    private void OnTriggerEnter2D(Collider2D hitInfo)
+    public void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Enemy enemy = hitInfo.GetComponent<Enemy>();
         if (enemy != null)
         {
             enemy.TakeDamage(bulletDamage);
         }
+        
+        if (hitInfo.tag == "dSC")
+        {
+            dubbelSpeedClick dSC = FindObjectOfType<dubbelSpeedClick>();
+            print(dSC.name);
+            dSC.enabled = true;
+
+        }
 
         Destroy(gameObject);
-     
     }
-
 
 }
