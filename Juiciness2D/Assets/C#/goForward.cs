@@ -9,13 +9,14 @@ public class goForward : MonoBehaviour
     public Vector3 direction;
     public int bulletDamage = 25;
 
+
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         rb2d.velocity = direction * speed;
     }
 
-    public void OnTriggerEnter2D(Collider2D hitInfo)
+    public virtual void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Enemy enemy = hitInfo.GetComponent<Enemy>();
         if (enemy != null)
@@ -28,10 +29,15 @@ public class goForward : MonoBehaviour
             dubbelSpeedClick dSC = FindObjectOfType<dubbelSpeedClick>();
             print(dSC.name);
             dSC.enabled = true;
-
         }
-
-        Destroy(gameObject);
+        
+        if (hitInfo.tag == "DS")
+        {
+            dubbelSkada DS = FindObjectOfType<dubbelSkada>();
+            print(DS.name);
+            DS.enabled = true;
+        }
+            Destroy(gameObject);
     }
 
 }

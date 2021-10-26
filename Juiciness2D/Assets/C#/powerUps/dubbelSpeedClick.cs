@@ -16,13 +16,10 @@ public class dubbelSpeedClick : Aim
     private void OnEnable()
     {
         time = 0;
-       // print("scrpt started");
     }
 
     public override void Update()
     {
-        print("Override Update started");
-
         base.Update();
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {

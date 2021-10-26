@@ -6,11 +6,13 @@ public class Aim : MonoBehaviour
 {
     public GameObject acornBullet;
     public Transform firePoint;
+    public AudioSource shooting;
+    public AudioClip shot;
+    public int damage = 25;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-       
+        shooting.clip = shot;
     }
 
     // Update is called once per frame
@@ -35,7 +37,7 @@ public class Aim : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, 0, vinkel); //sätter in vinkeln i kanonens z rotation
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0)) //Vänster klick
         {
             shoot();
         }
@@ -46,8 +48,10 @@ public class Aim : MonoBehaviour
     {
 
         // Shooting logic
-        goForward Bullet = Instantiate(acornBullet, firePoint.position, firePoint.rotation).GetComponent<goForward>();
-        Bullet.direction = transform.up;
+        goForward Bullet = Instantiate(acornBullet, firePoint.position, firePoint.rotation).GetComponent<goForward>(); //Skapar ett material på firepoints position och rotation från scripten goForward - Edvin
+        Bullet.direction = transform.up; //skottet går framåt då y-axeln är det håll som kanonen kollar åt och up - Edvin
+        Bullet.bulletDamage = damage;
+        shooting.Play(); //spelar skottljud
 
     }
 }
