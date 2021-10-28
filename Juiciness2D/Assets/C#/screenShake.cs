@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class screenShake : MonoBehaviour
 {
@@ -9,32 +7,31 @@ public class screenShake : MonoBehaviour
     public Vector2 amplitude; //Hur mycket det ska skakas. - Daniel
     Vector2 time = Vector2.zero; //Hur mycket tid som har gått. - Daniel
     static bool shouldShake; //En bool för ifall skärmen ska skaka eller inte. - Daniel
-    static float shakeTime; //Hur länge det ska skaka. - Daniel
-
+   public static float shakeTime; //Hur länge det ska skaka. - Daniel
+    Vector3 startPos;
     // Start is called before the first frame update
     void Start()
     {
         shouldShake = false;
+        startPos = transform.position; //Sätter startPos till kamerans startposition. - Daniel
     }
 
     // Update is called once per frame
     void Update()
     {
-        time = frequency;
-        Vector3 localPos = transform.position;
-        if (enemy.health = 0)
+        if (shakeTime > 0)
         {
-            if (shakeTime >= 0)
-            {
-                shouldShake = true;
-            }
+            Vector3 localPos = transform.position; //localPos blir kamerans position. - Daniel
+            time.x += Time.time * frequency.x;
+            time.y += Time.time * frequency.y;
+            localPos.x = Mathf.Sin(time.x) * amplitude.x;
 
+            transform.position = localPos;
+            shakeTime -= Time.deltaTime;
         }
-
-        shakeTime -= Time.deltaTime;
-        //time = Time.fixeddeltaTime
-        //gameobject.pos
-        //shakepos.x = Sin(rid) * amplitud.x
-        //lokalpos = shakepos
+        else
+        {
+            transform.position = startPos;
+        }
     }
 }
