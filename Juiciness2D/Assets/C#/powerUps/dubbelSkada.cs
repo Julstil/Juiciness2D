@@ -12,7 +12,7 @@ public class dubbelSkada : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        aim = GetComponent<Aim>(); //Reference to the Aim script - Edvin
+        aim = GetComponent<Aim>();
         saveBulletDamage = aim.damage;
         this.enabled = false;
     }
