@@ -36,9 +36,13 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Die()
     {
+        Score.score++;
         Instantiate(POW, transform.position, Quaternion.Euler(0, 0, Random.Range(25, -25)));
         Destroy(gameObject);
+<<<<<<< Updated upstream
         screenShake.shakeTime = 0.2f; //Får skärmen att skaka i 0.2f. - Daniel
         //Destroy(gameObject, 1); - Edvin
+=======
+>>>>>>> Stashed changes
     }
 }
