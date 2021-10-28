@@ -11,16 +11,21 @@ public class Enemy : MonoBehaviour
     public GameObject[] Pows = new GameObject[allPows];
     GameObject POW;
 
+    public Animator owlAnim;
+
     private void Start()
     {
         health = startHealth;
         int index = Random.Range(0, Pows.Length);
         POW = Pows[index];
+        owlAnim.SetBool("Damage", false);
     }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
+
+        owlAnim.SetBool("Damage", true);
 
         if (health <= 0)
         {
