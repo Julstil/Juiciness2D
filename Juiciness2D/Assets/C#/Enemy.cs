@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
     {
         Instantiate(POW, transform.position, Quaternion.Euler(0, 0, Random.Range(25, -25)));
         Destroy(gameObject);
-
+        screenShake.shakeTime = 0.2f; //Får skärmen att skaka i 0.2f. - Daniel
         //Destroy(gameObject, 1); - Edvin
     }
 }

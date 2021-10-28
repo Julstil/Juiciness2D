@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752e565dbc695654e8576ba56309a278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   startHealth: 5
   Pows:
   - {fileID: 6661014354708139171, guid: 3713f2dbcd123d04f9e847dcc7446f53, type: 3}
@@ -589,6 +590,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -604,6 +606,20 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20bcbf7f66fb59e45bfffae0a967d998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frequency: {x: 1, y: 1}
+  amplitude: {x: 1.5, y: 1.5}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -727,6 +743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752e565dbc695654e8576ba56309a278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   startHealth: 60
   Pows:
   - {fileID: 6661014354708139171, guid: 3713f2dbcd123d04f9e847dcc7446f53, type: 3}
@@ -1614,6 +1631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752e565dbc695654e8576ba56309a278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   startHealth: 60
   Pows:
   - {fileID: 6661014354708139171, guid: 3713f2dbcd123d04f9e847dcc7446f53, type: 3}
