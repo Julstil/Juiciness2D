@@ -244,6 +244,7 @@ MonoBehaviour:
   startHealth: 5
   Pows:
   - {fileID: 6661014354708139171, guid: 3713f2dbcd123d04f9e847dcc7446f53, type: 3}
+  owlAnim: {fileID: 0}
 --- !u!1 &146261983
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,6 +748,7 @@ MonoBehaviour:
   startHealth: 60
   Pows:
   - {fileID: 6661014354708139171, guid: 3713f2dbcd123d04f9e847dcc7446f53, type: 3}
+  owlAnim: {fileID: 596585053}
 --- !u!61 &596585049
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1657,3 +1659,4 @@ MonoBehaviour:
   startHealth: 60
   Pows:
   - {fileID: 6661014354708139171, guid: 3713f2dbcd123d04f9e847dcc7446f53, type: 3}
+  owlAnim: {fileID: 0}
