@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int health;
-    public int startHealth;
+    int startHealth;
     public static int allPows = 0;
 
     public GameObject[] Pows = new GameObject[allPows];
@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        health = startHealth;
+        startHealth = health ;
         int index = Random.Range(0, Pows.Length);
         POW = Pows[index];
         owlAnim.SetBool("Damage", false);
