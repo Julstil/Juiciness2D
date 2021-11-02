@@ -22,6 +22,7 @@ public class goForward : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(bulletDamage);
+            enemy.owlAnim.SetBool("Damage", true);
         }
         
         if (hitInfo.tag == "dSC")

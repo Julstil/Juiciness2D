@@ -7,11 +7,14 @@ public class Enemy : MonoBehaviour
     public int health;
     int startHealth;
     public static int allPows = 0;
+    float time;
+    public float endDamage;
 
     public GameObject[] Pows = new GameObject[allPows];
     GameObject POW;
 
     public Animator owlAnim;
+    public GameObject thisObject;
 
     private void Start()
     {
@@ -25,7 +28,11 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
 
-        owlAnim.SetBool("Damage", true);
+        time += Time.deltaTime;
+        if (thisObject != FindObjectOfType<goForward>())
+        {
+            owlAnim.SetBool("Damage", false);
+        }
 
         if (health <= 0)
         {

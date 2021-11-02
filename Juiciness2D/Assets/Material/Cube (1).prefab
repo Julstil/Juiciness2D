@@ -73,9 +73,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 60
+  endDamage: 1
   Pows:
-  - {fileID: 6661014354708139171, guid: 3713f2dbcd123d04f9e847dcc7446f53, type: 3}
+  - {fileID: 500390151810966295, guid: abdbcfbad295d544c8d40702e4af088c, type: 3}
+  - {fileID: 4041676051538945261, guid: 8f3dc560a8922e747902b20a2a942497, type: 3}
+  - {fileID: 8558949436104142117, guid: 4706b028c4666f34989527ae2e8b056d, type: 3}
   owlAnim: {fileID: 7647607908559013044}
+  thisObject: {fileID: 7213192037605774240}
 --- !u!212 &3526743066497265747
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -114,7 +118,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 21f477bebd34550439517a55b69eb8e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
