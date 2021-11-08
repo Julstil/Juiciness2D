@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3936619371444194005}
   - component: {fileID: 420577822362754175}
-  - component: {fileID: -6440325912684819801}
+  - component: {fileID: -319549242380830514}
   - component: {fileID: 3526743066497265747}
   - component: {fileID: 7647607908559013044}
   m_Layer: 0
@@ -60,7 +60,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-6440325912684819801
+--- !u!114 &-319549242380830514
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,17 +69,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7213192037605774240}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 752e565dbc695654e8576ba56309a278, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b7ccdbd3b78c08488325e85d5009646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 60
-  endDamage: 1
   Pows:
-  - {fileID: 500390151810966295, guid: abdbcfbad295d544c8d40702e4af088c, type: 3}
   - {fileID: 4041676051538945261, guid: 8f3dc560a8922e747902b20a2a942497, type: 3}
+  - {fileID: 500390151810966295, guid: abdbcfbad295d544c8d40702e4af088c, type: 3}
   - {fileID: 8558949436104142117, guid: 4706b028c4666f34989527ae2e8b056d, type: 3}
   owlAnim: {fileID: 7647607908559013044}
-  thisObject: {fileID: 7213192037605774240}
+  time: 0
+  endDamage: 0.01
 --- !u!212 &3526743066497265747
 SpriteRenderer:
   m_ObjectHideFlags: 0

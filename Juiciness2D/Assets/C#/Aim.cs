@@ -32,10 +32,11 @@ public class Aim : MonoBehaviour
          * A värdet är lika med delta y, y2 är musens y position och y1 är kanonens y position.
          * B värdet är lika med delta x, x2 är musens x position och x1 är kanonens x position.
          * Arctan använder sig dock av radier och inte grader så jag multiplicera med Mathf.Rad2Deg för att få skälva graderna på vinkeln.
-         * -90 är där som en offset för att få kanonen att peka uppåt och inte åt vänster - Edvin 
+         * -90 är där som en offset för att få kanonen att peka uppåt och inte åt vänster
+         * - Edvin 
          */
 
-        transform.rotation = Quaternion.Euler(0, 0, vinkel); //sätter in vinkeln i kanonens z rotation
+        transform.rotation = Quaternion.Euler(0, 0, vinkel); //sätter in vinkeln i kanonens z rotation - Edvin
 
         if (Input.GetKeyDown(KeyCode.Mouse0)) //Vänster klick
         {
@@ -50,7 +51,7 @@ public class Aim : MonoBehaviour
         // Shooting logic
         goForward Bullet = Instantiate(acornBullet, firePoint.position, firePoint.rotation).GetComponent<goForward>(); //Skapar ett material på firepoints position och rotation från scripten goForward - Edvin
         Bullet.direction = transform.up; //skottet går framåt då y-axeln är det håll som kanonen kollar åt och up - Edvin
-        Bullet.bulletDamage = damage;
+        Bullet.bulletDamage = damage; //Skottets skada ändras nu från Aim koden istället för goForward - Edvin
         shooting.Play(); //spelar skottljud
 
     }

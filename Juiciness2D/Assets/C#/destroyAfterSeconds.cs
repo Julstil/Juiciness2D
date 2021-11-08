@@ -8,6 +8,6 @@ public class destroyAfterSeconds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Destroy(gameObject, timeToDie);
+        Destroy(gameObject, timeToDie); //destroys gameobject after a named number of time has passed - Edvin
     }
 }
